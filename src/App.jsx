@@ -1,14 +1,9 @@
-import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
+import Layout from "./components/Layout.jsx";
 
 const App = () => {
 
     return (
-        <div className="App grid-rows-app">
-            <Header />
-            <div>lol</div>
-            <Footer />
-        </div>
+        <Layout />
     );
 }
 
