@@ -4,16 +4,18 @@ const DataContext = createContext({});
 
 export const DataProvider = ({children}) => {
     const [username, setUsername] = useState("");
-    const [userTopArray, setUserTopArray] = useState([]);
+    const [topUserArray, setTopUserArray] = useState([]);
 
-    <DataContext.Provider value={{
-        username,
-        setUsername,
-        userTopArray,
-        setUserTopArray
-    }}>
-        {children}
-    </DataContext.Provider>
+    return (
+        <DataContext.Provider value={{
+            username,
+            setUsername,
+            topUserArray,
+            setTopUserArray
+        }}>
+            {children}
+        </DataContext.Provider>
+    );
 };
 
 export default DataContext;
