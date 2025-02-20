@@ -40,7 +40,7 @@ const TopPage = () => {
 
     useEffect(() => {
         if(!username || username === "") navigate("/");
-    }, [username]);
+    }, [username, navigate]);
 
     const {loading, error, data} = useQuery(ANIME_QUERY, {
         variables: {username}
