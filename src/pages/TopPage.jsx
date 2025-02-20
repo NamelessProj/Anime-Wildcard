@@ -2,7 +2,7 @@ import {gql, useQuery} from "@apollo/client";
 import {useContext, useEffect} from "react";
 import DataContext from "../context/DataContext.jsx";
 import DefaultSpinner from "../components/DefaultSpinner.jsx";
-import {Alert} from "@material-tailwind/react";
+import {Alert, Button, Card, CardBody} from "@material-tailwind/react";
 import UserTopContainer from "../components/UserTopContainer.jsx";
 import {useNavigate} from "react-router-dom";
 
@@ -42,6 +42,11 @@ const TopPage = () => {
         if(!username || username === "") navigate("/");
     }, [username, navigate]);
 
+    const handleClick = (e) => {
+        e.preventDefault();
+        navigate("/");
+    }
+
     const {loading, error, data} = useQuery(ANIME_QUERY, {
         variables: {username}
     });
@@ -56,9 +61,20 @@ const TopPage = () => {
                 <>
                     {error ? (
                         <main className="flex justify-center items-center">
-                            <Alert color="red">
-                                {error.message}
-                            </Alert>
+                            <Card className="w-[min(450px,100%)]">
+                                <CardBody className="flex flex-col gap-3">
+                                    <Alert color="red">
+                                        {error.message}
+                                    </Alert>
+                                    <Button
+                                        color="deep-orange"
+                                        variant="gradient"
+                                        onClick={handleClick}
+                                    >
+                                        Go Back
+                                    </Button>
+                                </CardBody>
+                            </Card>
                         </main>
                     ) : (
                         <main>
