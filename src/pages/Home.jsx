@@ -1,10 +1,13 @@
 import {Alert, Button, Card, CardBody, Input} from "@material-tailwind/react";
 import {useContext, useState} from "react";
 import DataContext from "../context/DataContext.jsx";
+import {useNavigate} from "react-router-dom";
 
 const Home = () => {
     const {username, setUsername} = useContext(DataContext);
     const [error, setError] = useState("");
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,6 +18,8 @@ const Home = () => {
             document.querySelector("input[name='username']").focus();
             return;
         }
+
+        navigate("/top");
     }
 
     return (
