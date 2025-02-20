@@ -1,10 +1,10 @@
-import {Alert, Button, Card, CardBody, Input} from "@material-tailwind/react";
+import {Alert, Button, Card, CardBody, Checkbox, Input} from "@material-tailwind/react";
 import {useContext, useState} from "react";
 import DataContext from "../context/DataContext.jsx";
 import {useNavigate} from "react-router-dom";
 
 const Home = () => {
-    const {username, setUsername} = useContext(DataContext);
+    const {username, getAdult, setUsername, setGetAdult} = useContext(DataContext);
     const [error, setError] = useState("");
 
     const navigate = useNavigate();
@@ -36,6 +36,13 @@ const Home = () => {
                             color="deep-orange"
                             name="username"
                             autoFocus
+                        />
+                        <Checkbox
+                            checked={getAdult}
+                            onChange={(e) => setGetAdult(e.target.checked)}
+                            color="deep-orange"
+                            name="adult"
+                            label="Include adult content"
                         />
                         <Button
                             color="deep-orange"
