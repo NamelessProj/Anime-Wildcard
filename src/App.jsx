@@ -1,8 +1,8 @@
-import {Route, Routes} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import Layout from "./components/Layout.jsx";
 import Home from "./pages/Home.jsx";
 
-const App = () => {
+function App() {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>

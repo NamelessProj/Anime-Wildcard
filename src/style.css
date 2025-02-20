@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    interpolate-size: allow-keywords;
+
+    --ff-devgothic: system-ui, sans-serif;
+
+    --bg-color-1: #101720;
+    --bg-color-2: #171717;
+    --text-color: #d9d9d9;
+    --white: #fff;
+}
+
+
+/* ======== SCROLLBAR ======== */
+
+::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #171717;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #bc4b27;
+    border-radius: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    hanging-punctuation: first last;
+    color-scheme: dark;
+    scrollbar-color: #bc4b27 #171717; /* For Firefox scrollbar: thumb color then track color */
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    min-height: 100svh;
+    background: linear-gradient(var(--bg-color-1), var(--bg-color-2));
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+p {
+    max-width: 75ch;
+    text-wrap: pretty;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.App{
+    min-height: 100svh;
+    height: 100%;
+}
+
+
+/* ======== REDUCED MOTION: NO PREFERENCE ======== */
+
+@media (prefers-reduced-motion: no-preference) {
+    html,
+    :has(:target) {
+        scroll-behavior: smooth;
+    }
+}

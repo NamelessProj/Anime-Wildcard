@@ -1,8 +1,8 @@
 const Home = () => {
     return (
-        <main>
-            Home
-        </main>
+        <div>
+            hzh
+        </div>
     );
 };
 
