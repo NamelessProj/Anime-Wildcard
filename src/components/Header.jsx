@@ -1,12 +1,15 @@
 import {Typography} from "@material-tailwind/react";
 import {FaGithub} from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 const Header = () => {
     return (
         <header className="p-3">
             <div className="flex justify-between items-center">
                 <Typography variant="h2" as="p">
-                    Your BLinded Anime Top
+                    <Link to="/">
+                        Your BLinded Anime Top
+                    </Link>
                 </Typography>
 
                 <a target="_blank" href="https://github.com/NamelessProj/Your_Blinded_Anime_Top">
