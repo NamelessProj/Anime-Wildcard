@@ -4,13 +4,17 @@ import {shuffleArray} from "../utils/shuffleArray.js";
 import {Alert, Button} from "@material-tailwind/react";
 import DataContext from "../context/DataContext.jsx";
 import {Link} from "react-router-dom";
+import TopCard from "./TopCard.jsx";
 
 const UserTopContainer = ({data}) => {
     const {getAdult} = useContext(DataContext);
 
+    const [currentIndex, setCurrentIndex] = useState(0);
     const [animeList, setAnimeList] = useState([]);
+    const [topCardArray, setTopCardArray] = useState(Array(5).fill(null));
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState("");
+    const [userError, setUserError] = useState("");
 
     useEffect(() => {
         if(data && data.MediaListCollection && data.MediaListCollection.lists){
@@ -28,6 +32,19 @@ const UserTopContainer = ({data}) => {
             setIsLoading(false);
         }
     }, [data]);
+
+    const handleTopCardArray = (index) => {
+        setUserError("");
+
+        if(topCardArray[index] !== null){
+            setUserError("This place is already taken.");
+            return;
+        }
+
+        setTopCardArray(topCardArray.map((anime, i) => i === index ? animeList[currentIndex] : anime));
+
+        setCurrentIndex(currentIndex + 1);
+    }
 
     return (
         <>
@@ -55,6 +72,20 @@ const UserTopContainer = ({data}) => {
                         </div>
                     ) : (
                         <div>
+                            {userError && (
+                                <div className="flex justify-center my-2">
+                                    <Alert color="red" className="w-fit">
+                                        {userError}
+                                    </Alert>
+                                </div>
+                            )}
+
+                            <div className="flex justify-center flex-wrap gap-5">
+                                {topCardArray.map((_, index) => (
+                                    <TopCard key={index} anime={topCardArray[index]} handler={() => handleTopCardArray(index)} />
+                                ))}
+                            </div>
+
                             {animeList.map((anime) => (
                                 <div key={anime.id}>
                                     <img src={anime.media.coverImage.large} alt={anime.media.title.romaji} />
