@@ -23,14 +23,14 @@ const TopCard = ({index, anime, handler}) => {
     }
 
     return (
-        <button onClick={handler} className="w-24">
-            <div className="mb-2">
-                <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" containerClassName="w-24 h-36">
-                    <img {...imgProps} src="./card_back.webp" alt="" />
-                    <img {...imgProps} src={anime ? anime.media.coverImage.large : "./card_back.webp"} alt={name} />
-                </ReactCardFlip>
-            </div>
-            <Tooltip content={name}>
+        <Tooltip content={name}>
+            <button onClick={handler} className="w-24">
+                <div className="mb-2">
+                    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" containerClassName="w-24 h-36">
+                        <img {...imgProps} src="./card_back.webp" alt="" />
+                        <img {...imgProps} src={anime ? anime.media.coverImage.large : "./card_back.webp"} alt={name} />
+                    </ReactCardFlip>
+                </div>
                 {typeof name === "string" ?
                     <Typography
                         {...typoProps}
@@ -45,8 +45,8 @@ const TopCard = ({index, anime, handler}) => {
                         {name}
                     </Typography>
                 }
-            </Tooltip>
-        </button>
+            </button>
+        </Tooltip>
     );
 };
 
