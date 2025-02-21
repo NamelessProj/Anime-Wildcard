@@ -11,8 +11,6 @@ query ($username: String) {
   MediaListCollection (userName: $username, type: ANIME, status_not_in: [PAUSED, PLANNING, DROPPED]) {
     lists {
       entries {
-        id,
-        mediaId,
         media {
           id,
           isAdult,
@@ -21,12 +19,8 @@ query ($username: String) {
             english
           },
           coverImage {
-            extraLarge,
             large,
-            medium,
-            color
-          },
-          bannerImage
+          }
         }
       }
     }
