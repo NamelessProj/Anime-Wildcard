@@ -5,6 +5,8 @@ import {Alert, Button} from "@material-tailwind/react";
 import DataContext from "../context/DataContext.jsx";
 import {Link} from "react-router-dom";
 import TopCard from "./TopCard.jsx";
+import animeCard from "./AnimeCard.jsx";
+import AnimeCard from "./AnimeCard.jsx";
 
 const UserTopContainer = ({data}) => {
     const {getAdult} = useContext(DataContext);
@@ -15,6 +17,8 @@ const UserTopContainer = ({data}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState("");
     const [userError, setUserError] = useState("");
+
+    const [animeCards, setAnimeCards] = useState([]);
 
     useEffect(() => {
         if(data && data.MediaListCollection && data.MediaListCollection.lists){
@@ -32,6 +36,12 @@ const UserTopContainer = ({data}) => {
             setIsLoading(false);
         }
     }, [data]);
+
+    useEffect(() => {
+        if(animeList.length > 0 && currentIndex < animeList.length){
+            setAnimeCards([...animeCards, <AnimeCard key={animeList[currentIndex].media.id} anime={animeList[currentIndex].media} />]);
+        }
+    }, [currentIndex, animeList]);
 
     const handleTopCardArray = (index) => {
         setUserError("");
@@ -86,12 +96,9 @@ const UserTopContainer = ({data}) => {
                                 ))}
                             </div>
 
-                            {animeList.map((anime) => (
-                                <div key={anime.id}>
-                                    <img src={anime.media.coverImage.large} alt={anime.media.title.romaji} />
-                                    <h3>{anime.media.title.romaji}</h3>
-                                </div>
-                            ))}
+                            <div className="relative isolate min-h-[500px]">
+                                {animeCards}
+                            </div>
                         </div>
                     )}
                 </div>
