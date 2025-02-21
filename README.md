@@ -1,7 +1,7 @@
 # Wanna Make Your TOP 5 Anime Without Knowing What Will Be The Next Anime?
 Then you are in the right place! This project will help you to make your top 5 anime without knowing what will be the next anime.
 
-The project was made using ReactJS, ViteJS and TailwindCSS.
+The project was made using ReactJS, ViteJS, TailwindCSS and the Anilist API.
 
 ## How to use?
 1. Clone this repository.
@@ -9,6 +9,12 @@ The project was made using ReactJS, ViteJS and TailwindCSS.
 3. Run `npm run dev` to start the development server.
 4. Open your browser and go to `http://localhost:3000/`.
 5. Enjoy!
+
+>[!TIP]
+> ### Anilist Account
+> If you don't have an Anilist account, you can create one [here](https://anilist.co/).
+> 
+> You can also use the username of other users if their anime list is public.
 
 ## How to use the app?
 1. Enter your Anilist username.
