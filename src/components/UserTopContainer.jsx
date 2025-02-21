@@ -101,7 +101,7 @@ const UserTopContainer = ({data}) => {
                                 </div>
                             )}
 
-                            <div className="flex justify-center flex-wrap gap-5 my-12">
+                            <div className="flex justify-center flex-row-reverse flex-wrap-reverse gap-5 my-12">
                                 {topCardArray.map((_, index) => (
                                     <TopCard key={index} index={index} anime={topCardArray[index]} handler={() => handleTopCardArray(index)} />
                                 ))}
