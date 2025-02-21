@@ -12,7 +12,7 @@ The project was made using ReactJS, ViteJS, TailwindCSS and the Anilist API.
 
 >[!TIP]
 > ### Anilist Account
-> If you don't have an Anilist account, you can create one [here](https://anilist.co/).
+> If you don't have an Anilist account, you can create one [here](https://anilist.co/signup).
 > 
 > You can also use the username of other users if their anime list is public.
 
