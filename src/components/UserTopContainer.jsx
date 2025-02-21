@@ -5,7 +5,6 @@ import {Alert, Button} from "@material-tailwind/react";
 import DataContext from "../context/DataContext.jsx";
 import {Link} from "react-router-dom";
 import TopCard from "./TopCard.jsx";
-import animeCard from "./AnimeCard.jsx";
 import AnimeCard from "./AnimeCard.jsx";
 
 const UserTopContainer = ({data}) => {
