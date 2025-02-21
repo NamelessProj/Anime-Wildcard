@@ -49,7 +49,7 @@ const Home = () => {
                             variant="gradient"
                             onClick={handleSubmit}
                         >
-                            To the Blinded Top
+                            To The Blinded Top
                         </Button>
                     </form>
                 </CardBody>
