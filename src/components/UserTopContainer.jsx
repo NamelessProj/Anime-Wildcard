@@ -16,6 +16,7 @@ const UserTopContainer = ({data}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState("");
     const [userError, setUserError] = useState("");
+    const [canClick, setCanClick] = useState(false);
 
     const [animeCards, setAnimeCards] = useState([]);
 
@@ -33,6 +34,10 @@ const UserTopContainer = ({data}) => {
 
             setAnimeList(shuffledList.slice(0, 5));
             setIsLoading(false);
+
+            setTimeout(() => {
+                setCanClick(true);
+            }, 3000);
         }
     }, [data]);
 
@@ -45,14 +50,21 @@ const UserTopContainer = ({data}) => {
     const handleTopCardArray = (index) => {
         setUserError("");
 
+        if(!canClick) return;
+
         if(topCardArray[index] !== null){
             setUserError("This place is already taken.");
             return;
         }
 
+        setCanClick(false);
         setTopCardArray(topCardArray.map((anime, i) => i === index ? animeList[currentIndex] : anime));
 
         setCurrentIndex(currentIndex + 1);
+
+        setTimeout(() => {
+            setCanClick(true);
+        }, 3000);
     }
 
     return (
