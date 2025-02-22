@@ -12,7 +12,7 @@ const Header = () => {
                     </Link>
                 </Typography>
 
-                <a target="_blank" href="https://github.com/NamelessProj/Your_Blinded_Anime_Top">
+                <a target="_blank" href="https://github.com/NamelessProj/Anime-Wildcard">
                     <Typography className="sr-only">
                         View on GitHub
                     </Typography>
