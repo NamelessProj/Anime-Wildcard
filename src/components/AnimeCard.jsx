@@ -29,7 +29,7 @@ const AnimeCard = ({anime}) => {
         <div className="anime-card fixed left-1/2 bottom-[5%]" style={style}>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" flipSpeedFrontToBack={0.3}>
                 <div className={cardClassName}>
-                    <img className={imgClassName} src="./card_back.webp" alt="" />
+                    <img className={imgClassName} src="./card_back.jpg" alt="" />
                 </div>
 
                 <Tooltip content={name}>
