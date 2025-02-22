@@ -15,7 +15,7 @@ const AnimeCard = ({anime}) => {
 
     const cardClassName = "w-60 h-96 rounded-md overflow-clip"
 
-    const style = {"--rotate-angle": `${Math.random() * 20 - 10}deg`};
+    const style = {"--rotate-angle": `${Math.random() * 10 - 5}deg`};
 
     const handleClick = (e) => {
         e.preventDefault();
