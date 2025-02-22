@@ -8,7 +8,7 @@ const Header = () => {
             <div className="flex justify-between items-center">
                 <Typography variant="h2" as="p">
                     <Link to="/">
-                        Your BLinded Anime Top
+                        Anime Wildcard
                     </Link>
                 </Typography>
 
