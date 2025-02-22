@@ -13,6 +13,8 @@ const TopCard = ({index, anime, handler}) => {
         }
     }, [anime]);
 
+    const backCard = `./card_back_${index + 1}.jpg`;
+
     const imgProps = {
         className: "w-full h-full rounded-[5px] overflow-clip object-cover",
     };
@@ -27,8 +29,8 @@ const TopCard = ({index, anime, handler}) => {
             <button onClick={handler} className="w-24">
                 <div className="mb-2">
                     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" containerClassName="w-24 h-36">
-                        <img {...imgProps} src="./card_back.webp" alt="" />
-                        <img {...imgProps} src={anime ? anime.media.coverImage.large : "./card_back.webp"} alt={name} />
+                        <img {...imgProps} src={backCard} alt="" />
+                        <img {...imgProps} src={anime ? anime.media.coverImage.large : backCard} alt={name} />
                     </ReactCardFlip>
                 </div>
                 {typeof name === "string" ?
